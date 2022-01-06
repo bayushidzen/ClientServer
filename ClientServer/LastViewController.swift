@@ -7,17 +7,6 @@
 
 import UIKit
 
-
-class Session {
-    static let instance = Session()
-    
-    private init (){}
-    
-    var fio = "1112"
-    var id = UUID.self
-    var money = 0
-}
-
 class LastViewController: UIViewController {
 
     @IBOutlet weak var nameView: UILabel!
@@ -27,10 +16,8 @@ class LastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let session = Session.instance
-        nameView.text = session.fio
-        nameView.textColor = UIColor.orange
-        moneyView.text = String(describing: session.money)
+        nameView.text = Session.instance.fio
+        moneyView.text = String(describing: Session.instance.money)
         // Do any additional setup after loading the view.
     }
     
